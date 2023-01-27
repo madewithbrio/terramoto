@@ -1,0 +1,32 @@
+# JEKYLL
+exclude: [
+  ".gitignore",
+  "_site"
+]
+
+destination: ./_site
+
+# SITE TITLE
+title: Terramoto
+
+# URLS
+host: 0.0.0.0
+port: 1111
+
+permalink: pretty
+
+# ASSETS PATHS
+img_path: /assets/img/
+js_path: /assets/js/
+css_path: /assets/css/
+scss_path: /assets/scss/
+fonts_path: /assets/font/
+docs_path: /assets/docs/
+video_path: /assets/video/
+audio_path: /assets/audio/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

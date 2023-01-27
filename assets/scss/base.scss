@@ -1,0 +1,196 @@
+@import "_variables.scss";
+
+html {
+    scroll-behavior:smooth;
+    scroll-padding-top:var(--sb-200);
+    @include breakpoint($medium) {
+        scroll-padding-top:var(--sb-200);
+    }
+    @include breakpoint($large) {
+        scroll-padding-top: 54px;
+    }
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family:var(--os-default-font);
+    background-color:var(--background-color);
+    color:var(--text-color-hard);
+}
+
+a {
+    font-weight:700;
+    color:var(--text-color-hard);
+    text-decoration: underline;
+    &:hover {
+        color:var(--text-color-hardest);
+        text-decoration: underline;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ctn {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: red;
+    iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100vw;
+        height: 100vh;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        @media (min-aspect-ratio: 16/9) {
+            height: 56.25vw;
+        }
+        @media (max-aspect-ratio: 16/9) {
+            width: 177.78vh;
+        }
+    }
+    audio {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .controls {
+        --position: var(--sb-100);
+        position: absolute;
+        z-index: 1;
+        bottom: var(--position);
+        left: var(--position);
+        right: var(--position);
+        padding: var(--sb-100);
+        background-color: #000;
+        border-radius:100px;
+        .button {
+            padding:0;
+            background:none;
+            border:none;
+            transform: rotate(180deg);
+            .bar {
+                border-radius: 2px;
+            }
+            #bar1 {
+                animation: bar1 1.2s infinite linear;
+            }
+
+            #bar2 {
+                animation: bar2 0.8s infinite linear;
+            }
+
+            #bar3 {
+                animation: bar3 1s infinite linear;
+            }
+
+            #bar4 {
+                animation: bar4 0.7s infinite linear;
+            }
+            &.muted {
+                opacity:0.33;
+                &:hover {
+                    opacity:0.5;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  @keyframes bar1 {
+    0% {
+      height: 2px;
+    }
+    50% {
+      height: 8px;
+    }
+    100% {
+      height: 2px;
+    }
+  }
+  
+  @keyframes bar2 {
+    0% {
+      height: 5px;
+    }
+    40% {
+      height: 1px;
+    }
+    80% {
+      height: 10px;
+    }
+    100% {
+      height: 5px;
+    }
+  }
+  
+  @keyframes bar3 {
+    0% {
+      height: 10px;
+    }
+    50% {
+      height: 0;
+    }
+    100% {
+      height: 10px;
+    }
+  }
+  
+  @keyframes bar4 {
+    0% {
+      height: 2px;
+    }
+    50% {
+      height: 0px;
+    }
+    100% {
+      height: 2px;
+    }
+  }

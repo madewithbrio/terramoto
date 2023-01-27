@@ -1,0 +1,343 @@
+.fw-100 {
+  font-weight: 100;
+}
+
+.fw-200 {
+  font-weight: 200;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+.fs-xxxsmall {
+  font-size: 0.5rem;
+}
+
+.fs-xxsmall {
+  font-size: 0.625rem;
+}
+
+.fs-xsmall {
+  font-size: 0.75rem;
+}
+
+.fs-small {
+  font-size: 0.875rem;
+}
+
+.fs-medium {
+  font-size: 1rem;
+}
+
+.fs-large {
+  font-size: 1.125rem;
+}
+
+.fs-xlarge {
+  font-size: 1.25rem;
+}
+
+.fs-xxlarge {
+  font-size: 1.375rem;
+}
+
+.fs-xxxlarge {
+  font-size: 1.5rem;
+}
+
+.fs-xxxxlarge {
+  font-size: 1.625rem;
+}
+
+.fs-xxxxlarge {
+  font-size: 1.75rem;
+}
+
+.fs-xxxxxlarge {
+  font-size: 1.875rem;
+}
+
+.fs-xxxxxxlarge {
+  font-size: 2rem;
+}
+
+.ratio-ctn {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+.ratio-ctn > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.ratio-ctn.ratio-ctn-169 {
+  padding-top: 56.25%;
+}
+.ratio-ctn.ratio-ctn-31 {
+  padding-top: 33%;
+}
+.ratio-ctn.ratio-ctn-21 {
+  padding-top: 50%;
+}
+.ratio-ctn.ratio-ctn-43 {
+  padding-top: 75%;
+}
+.ratio-ctn.ratio-ctn-11 {
+  padding-top: 100%;
+}
+.ratio-ctn.ratio-ctn-45 {
+  padding-top: 125%;
+}
+.ratio-ctn.ratio-ctn-34 {
+  padding-top: 150%;
+}
+.ratio-ctn.ratio-ctn-12 {
+  padding-top: 200%;
+}
+
+.text-secondary {
+  color: var(--text-color-soft) !important;
+}
+
+:root {
+  --colorStaticGrey100:#FFFFFF;
+  --colorStaticGrey200:#F2F2F2;
+  --colorStaticGrey300:#DDDDDD;
+  --colorStaticGrey400:#CCCCCC;
+  --colorStaticGrey500:#B0B0B0;
+  --colorStaticGrey600:#6B6B6B;
+  --colorStaticGrey700:#454545;
+  --colorStaticGrey800:#212121;
+  --colorStaticGrey900:#000000;
+  --os-default-font:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  --sb:16px;
+  --sb-025:calc( var(--sb) * 0.25 );
+  --sb-050:calc( var(--sb) * 0.50 );
+  --sb-075:calc( var(--sb) * 0.75 );
+  --sb-100:calc( var(--sb) * 1.00 );
+  --sb-150:calc( var(--sb) * 1.50 );
+  --sb-200:calc( var(--sb) * 2.00 );
+  --sb-300:calc( var(--sb) * 3.00 );
+  --sb-400:calc( var(--sb) * 4.00 );
+  --sb-500:calc( var(--sb) * 5.00 );
+  --sb-600:calc( var(--sb) * 6.00 );
+  --gridMaxWidth:1440px;
+  --gridPaddingMobile: var(--sb-100);
+  --gridPaddingTablet: var(--sb-200);
+  --gridPaddingDesktop: var(--sb-300);
+  --special-font: "Darker Grotesque";
+  --text-color-hardest:var(--colorStaticGrey900);
+  --text-color-hard:var(--colorStaticGrey800);
+  --text-color-soft:var(--colorStaticGrey500);
+  --text-color-softest:var(--colorStaticCeladonGrey500);
+  --text-color-negative:var(--colorStaticTextWhite);
+  --background-color:var(--colorStaticGrey100);
+  --background-color-soft:var(--colorStaticGrey100);
+  --background-color-hard:var(--colorStaticGrey100);
+  --background-color-hardest:var(--colorStaticGrey100);
+  --background-color-negative:var(--colorStaticGrey100);
+  --background-color-pessimist:var(--colorStaticGrey100);
+  --border-color-softest:var(--colorStaticGrey200);
+  --border-color-soft:var(--colorStaticGrey300);
+  --border-color-hard:var(--colorStaticGrey500);
+  --primary-color:#00acc1;
+  --secondary-color:var(--colorStaticCeladon400);
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  :root {
+    --spacingDefault:var(--gridPaddingMobile);
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --spacingDefault:var(--gridPaddingTablet);
+  }
+}
+@media (min-width: 1024px) and (max-width: 20000px) {
+  :root {
+    --spacingDefault:var(--gridPaddingDesktop);
+  }
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--sb-200);
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  html {
+    scroll-padding-top: var(--sb-200);
+  }
+}
+@media (min-width: 1024px) and (max-width: 20000px) {
+  html {
+    scroll-padding-top: 54px;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--os-default-font);
+  background-color: var(--background-color);
+  color: var(--text-color-hard);
+}
+
+a {
+  font-weight: 700;
+  color: var(--text-color-hard);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--text-color-hardest);
+  text-decoration: underline;
+}
+
+.ctn {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+}
+.ctn iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+@media (min-aspect-ratio: 16/9) {
+  .ctn iframe {
+    height: 56.25vw;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .ctn iframe {
+    width: 177.78vh;
+  }
+}
+.ctn audio {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.ctn .controls {
+  --position: var(--sb-100);
+  position: absolute;
+  z-index: 1;
+  bottom: var(--position);
+  left: var(--position);
+  right: var(--position);
+  padding: var(--sb-100);
+  background-color: #000;
+  border-radius: 100px;
+}
+.ctn .controls .button {
+  padding: 0;
+  background: none;
+  border: none;
+  transform: rotate(180deg);
+}
+.ctn .controls .button .bar {
+  border-radius: 2px;
+}
+.ctn .controls .button #bar1 {
+  animation: bar1 1.2s infinite linear;
+}
+.ctn .controls .button #bar2 {
+  animation: bar2 0.8s infinite linear;
+}
+.ctn .controls .button #bar3 {
+  animation: bar3 1s infinite linear;
+}
+.ctn .controls .button #bar4 {
+  animation: bar4 0.7s infinite linear;
+}
+.ctn .controls .button.muted {
+  opacity: 0.33;
+}
+.ctn .controls .button.muted:hover {
+  opacity: 0.5;
+}
+
+@keyframes bar1 {
+  0% {
+    height: 2px;
+  }
+  50% {
+    height: 8px;
+  }
+  100% {
+    height: 2px;
+  }
+}
+@keyframes bar2 {
+  0% {
+    height: 5px;
+  }
+  40% {
+    height: 1px;
+  }
+  80% {
+    height: 10px;
+  }
+  100% {
+    height: 5px;
+  }
+}
+@keyframes bar3 {
+  0% {
+    height: 10px;
+  }
+  50% {
+    height: 0;
+  }
+  100% {
+    height: 10px;
+  }
+}
+@keyframes bar4 {
+  0% {
+    height: 2px;
+  }
+  50% {
+    height: 0px;
+  }
+  100% {
+    height: 2px;
+  }
+}
+
+/*# sourceMappingURL=base.css.map */

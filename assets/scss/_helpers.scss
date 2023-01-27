@@ -1,0 +1,39 @@
+.fw-100 {font-weight:100}
+.fw-200 {font-weight:200}
+.fw-300 {font-weight:300}
+.fw-400 {font-weight:400}
+.fw-500 {font-weight:500}
+.fw-600 {font-weight:600}
+.fw-700 {font-weight:700}
+.fw-800 {font-weight:800}
+.fw-900 {font-weight:900}
+
+.fs-xxxsmall {font-size:0.5rem;}
+.fs-xxsmall {font-size:0.625rem;}
+.fs-xsmall {font-size:0.75rem;}
+.fs-small {font-size:0.875rem;}
+.fs-medium {font-size:1rem;}
+.fs-large {font-size:1.125rem;}
+.fs-xlarge {font-size:1.25rem;}
+.fs-xxlarge {font-size:1.375rem;}
+.fs-xxxlarge {font-size:1.5rem;}
+.fs-xxxxlarge {font-size:1.625rem;}
+.fs-xxxxlarge {font-size:1.75rem;}
+.fs-xxxxxlarge {font-size:1.875rem;}
+.fs-xxxxxxlarge {font-size:2rem;}
+
+.ratio-ctn {position:relative;height:0;overflow:hidden;
+    > * {position:absolute;top:0;left:0;width:100%;height:100%;margin:0;}
+    &.ratio-ctn-169 {padding-top:56.25%;}
+    &.ratio-ctn-31 {padding-top:33%;}
+    &.ratio-ctn-21 {padding-top:50%;}
+    &.ratio-ctn-43 {padding-top:75%;}
+    &.ratio-ctn-11 {padding-top:100%;}
+    &.ratio-ctn-45 {padding-top:125%;}
+    &.ratio-ctn-34 {padding-top:150%;}
+    &.ratio-ctn-12 {padding-top:200%;}
+}
+
+.text-secondary {
+    color: var(--text-color-soft)!important;
+}

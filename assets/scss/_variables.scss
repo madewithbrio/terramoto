@@ -1,0 +1,76 @@
+@import "_helpers.scss";
+@import "_breakpoint";
+
+$small: 0px 767px;
+$smallmedium: 0px 1023px;
+$medium: 768px 1023px;
+$mediumlarge: 768px 20000px;
+$large: 1024px 20000px;
+
+:root {
+
+    --colorStaticGrey100:#FFFFFF;
+    --colorStaticGrey200:#F2F2F2;
+    --colorStaticGrey300:#DDDDDD;
+    --colorStaticGrey400:#CCCCCC;
+    --colorStaticGrey500:#B0B0B0;
+    --colorStaticGrey600:#6B6B6B;
+    --colorStaticGrey700:#454545;
+    --colorStaticGrey800:#212121;
+    --colorStaticGrey900:#000000;
+
+    --os-default-font:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    
+    --sb:16px; //spacer base
+    --sb-025:calc( var(--sb) * 0.25 );
+    --sb-050:calc( var(--sb) * 0.50 );
+    --sb-075:calc( var(--sb) * 0.75 );
+    --sb-100:calc( var(--sb) * 1.00 );
+    --sb-150:calc( var(--sb) * 1.50 );
+    --sb-200:calc( var(--sb) * 2.00 );
+    --sb-300:calc( var(--sb) * 3.00 );
+    --sb-400:calc( var(--sb) * 4.00 );
+    --sb-500:calc( var(--sb) * 5.00 );
+    --sb-600:calc( var(--sb) * 6.00 );
+
+    --gridMaxWidth:1440px;
+
+    --gridPaddingMobile: var(--sb-100);
+    --gridPaddingTablet: var(--sb-200);
+    --gridPaddingDesktop: var(--sb-300);
+
+    --special-font: "Darker Grotesque";
+
+    // SITE FUNCTIONAL VARIABLES
+    --text-color-hardest:var(--colorStaticGrey900);
+    --text-color-hard:var(--colorStaticGrey800);
+    --text-color-soft:var(--colorStaticGrey500);
+    --text-color-softest:var(--colorStaticCeladonGrey500);
+    --text-color-negative:var(--colorStaticTextWhite);
+    --background-color:var(--colorStaticGrey100);
+    --background-color-soft:var(--colorStaticGrey100);
+    --background-color-hard:var(--colorStaticGrey100);
+    --background-color-hardest:var(--colorStaticGrey100);
+    --background-color-negative:var(--colorStaticGrey100);
+    --background-color-pessimist:var(--colorStaticGrey100);
+    --border-color-softest:var(--colorStaticGrey200);
+    --border-color-soft:var(--colorStaticGrey300);
+    --border-color-hard:var(--colorStaticGrey500);
+    //--primary-color:#29B6F6;
+    --primary-color:#00acc1;
+    //--primary-color:#005eac;
+    --secondary-color:var(--colorStaticCeladon400);
+
+    @include breakpoint($small) {
+        --spacingDefault:var(--gridPaddingMobile);
+    }
+    @include breakpoint($medium) {
+        --spacingDefault:var(--gridPaddingTablet);
+    }
+    @include breakpoint($large) {
+        --spacingDefault:var(--gridPaddingDesktop);
+    }
+
+    @media (prefers-color-scheme: dark) {
+    }
+}

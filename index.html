@@ -1,0 +1,91 @@
+---
+title: ""
+description: ""
+id: homepage
+---
+{% comment %}
+<div class="ctn">
+
+<iframe src="https://www.youtube.com/embed/Q5M-5XFplo0?autoplay=1&modestbranding=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" autoplay></iframe>
+<audio controls preload>
+<source src="{{ site.audio_path }}capelinhos-192.mp3" type="audio/mpeg">
+Your browser does not support the audio tag.
+</audio>
+<div class="controls">
+<button class="btn">Play</button>
+</div>
+?controls=0&autoplay=1&mute=1&rel=0&showinfo=0&modestbranding=1&showsearch=0&fs=0&vq=HD720
+
+</div>
+{% endcomment %}<div class="ctn">
+  <div id="ytplayer"></div>
+  <audio id="audioplayer" preload loop>
+    <source src="{{ site.audio_path }}capelinhos-192.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+  <div class="controls">
+    <button class="button muted" id="playpause">
+        <svg id="equalizer" width="36px" height="36px" viewBox="0 0 8 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g fill="#FFFFFF">
+                <rect id="bar1" class="bar" x="0" y="0" width="1" height="2"></rect>
+                <rect id="bar2" class="bar" x="2" y="0" width="1" height="5"></rect>
+                <rect id="bar3" class="bar" x="4" y="0" width="1" height="7"></rect>
+                <rect id="bar4" class="bar" x="6" y="0" width="1" height="4"></rect>
+            </g>
+        </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer', {
+      height: '360',
+      width: '640',
+      videoId: 'Q5M-5XFplo0',
+      playerVars: {
+        'autoplay': 1,
+        'mute': 1,
+        'controls': 0,
+        'showinfo': 0,
+        'showsearch': 0,
+        'rel': 0,
+        'modestbranding': 0
+      }
+    });
+  }
+  var button = document.getElementById('playpause');
+  var audioplayer = document.getElementById('audioplayer');
+
+  let isPlaying = false;
+  let isMuted = false;
+
+  button.addEventListener("click", function() {
+    if (isPlaying) {
+      if (isMuted) {
+        console.log('bota som!!!');
+        audioplayer.muted = false;
+        isMuted = false;
+        this.classList.remove('muted');
+      } else {
+        console.log('silencio sff');
+        audioplayer.muted = true;
+        isMuted = true;
+        this.classList.add('muted');
+        //button.innerHTML = "Play";
+      }
+    } else {
+      console.log('toca o disco!');
+      audioplayer.play();
+      isPlaying = true;
+      this.classList.remove('muted');
+      //button.innerHTML = "Pause";
+    }
+  });
+</script>
