@@ -51,6 +51,11 @@ a {
     width: 100vw;
     height: 100vh;
     background-color: red;
+    video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
     iframe {
         position: absolute;
         top: 50%;
