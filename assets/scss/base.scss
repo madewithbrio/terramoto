@@ -79,7 +79,7 @@ a {
         z-index: 1;
         bottom: var(--position);
         left: var(--position);
-        right: var(--position);
+        //right: var(--position);
         padding: var(--sb-100);
         background-color: #000;
         border-radius:100px;
@@ -107,9 +107,9 @@ a {
                 animation: bar4 0.7s infinite linear;
             }
             &.muted {
-                opacity:0.33;
+                opacity:0.5;
                 &:hover {
-                    opacity:0.5;
+                    opacity:0.66;
                 }
             }
         }

@@ -19,7 +19,7 @@ Your browser does not support the audio tag.
 </div>
 {% endcomment %}<div class="ctn">
   <div id="ytplayer"></div>
-  <audio id="audioplayer" preload loop>
+  <audio id="audioplayer" _controls _preload loop>
     <source src="{{ site.audio_path }}capelinhos-192.mp3" type="audio/mpeg">
     Your browser does not support the audio tag.
   </audio>
@@ -42,13 +42,51 @@ Your browser does not support the audio tag.
   tag.src = "https://www.youtube.com/player_api";
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var livestreams = [
+        {
+            id:"Q5M-5XFplo0",
+            title:"Kilauea",
+            description:"Cenassss"
+        },
+        {
+            id:"5qPoRCo_AZQ",
+            title:"Capelinhos",
+            description:"Capelinhos Descrição"
+        },
+        {
+            id:"Q5M-5XFplo0",
+            title:"Etna",
+            description:""
+        },
+        {
+            id:"Q5M-5XFplo0",
+            title:"Vesúvio",
+            description:""
+        },
+        {
+            id:"Q5M-5XFplo0",
+            title:"Pico",
+            description:""
+        }
+    ];
 
+  let randomNumber = Math.floor(Math.random() * livestreams.length);
   var player;
   function onYouTubePlayerAPIReady() {
     player = new YT.Player('ytplayer', {
-      height: '360',
-      width: '640',
-      videoId: 'Q5M-5XFplo0',
+      height: '0',
+      width: '0',
+      videoId: livestreams[randomNumber].id,
+      events: {
+        onStateChange: function(event){				
+            if(event.data == YT.PlayerState.PLAYING){
+                setTimeout(function(){
+                    let randomNumber = Math.floor(Math.random() * livestreams.length);
+                    player.loadVideoById(livestreams[randomNumber].id);
+                }, 5000);
+            }
+        }
+      },
       playerVars: {
         'autoplay': 1,
         'mute': 1,
@@ -83,6 +121,7 @@ Your browser does not support the audio tag.
     } else {
       console.log('toca o disco!');
       audioplayer.play();
+      //audioplayer.volume = 0.1;
       isPlaying = true;
       this.classList.remove('muted');
       //button.innerHTML = "Pause";
