@@ -5,12 +5,21 @@ id: homepage
 ---
 
 <div class="ctn">
-    <div id="ytplayer" style="display: none;"></div>
-    <video _controls muted autoplay loop>
+    {% comment %}
+    <video _controls muted autoplay loop id="my-video">
         <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
         <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
         Your browser does not support HTML5 video.
-    </video>
+        </video>
+        
+        <div id="plyr"
+        data-plyr-provider="youtube"
+        data-plyr-embed-id="Q5M-5XFplo0"
+        data-plyr-config='{ autoplay: 1 }'></div>
+    {% endcomment %}
+    
+    <div id="ytplayer" _style="display: none;"></div>
+
     <audio id="audioplayer" _controls _preload loop>
         <source src="{{ site.audio_path }}capelinhos-192.mp3" type="audio/mpeg">
         Your browser does not support the audio tag.
@@ -40,45 +49,36 @@ id: homepage
             description: "Cenassss"
         },
         {
-            id: "5qPoRCo_AZQ",
-            title: "Capelinhos",
-            description: "Capelinhos Descrição"
+            id: "7wZ2VmV9JDk",
+            title: "Popocatépetl",
+            description: "Popocatépetl is an active stratovolcano located in the states of Puebla, Morelos, and Mexico in central Mexico."
         },
         {
-            id: "Q5M-5XFplo0",
-            title: "Etna",
-            description: ""
-        },
-        {
-            id: "Q5M-5XFplo0",
-            title: "Vesúvio",
-            description: ""
-        },
-        {
-            id: "Q5M-5XFplo0",
-            title: "Pico",
-            description: ""
+            id: "dwkHiMfYH5Y",
+            title: "Sakurajima",
+            description: "Sakurajima is an active stratovolcano, formerly an island and now a peninsula, in Kagoshima Prefecture in Kyushu, Japan."
         }
     ];
     
     let randomNumber = Math.floor(Math.random() * livestreams.length);
     var player;
-    
     function onYouTubePlayerAPIReady() {
         player = new YT.Player('ytplayer', {
             height: '0',
             width: '0',
             videoId: livestreams[randomNumber].id,
+            /*
             events: {
                 onStateChange: function(event) {
                     if (event.data == YT.PlayerState.PLAYING) {
                         setTimeout(function() {
                             let randomNumber = Math.floor(Math.random() * livestreams.length);
                             player.loadVideoById(livestreams[randomNumber].id);
-                        }, 5000);
+                        }, 30000);
                     }
                 }
             },
+            */
             playerVars: {
                 'autoplay': 1,
                 'mute': 1,
@@ -90,34 +90,27 @@ id: homepage
             }
         });
     }
+
     var button = document.getElementById('playpause');
     var audioplayer = document.getElementById('audioplayer');
-    
     let isPlaying = false;
     let isMuted = false;
-    
     button.addEventListener("click", function() {
         if (isPlaying) {
             if (isMuted) {
-                console.log('bota som!!!');
                 audioplayer.muted = false;
                 isMuted = false;
                 this.classList.remove('muted');
             } else {
-                a
-                console.log('silencio sff');
                 audioplayer.muted = true;
                 isMuted = true;
                 this.classList.add('muted');
-                //button.innerHTML = "Play";
             }
         } else {
-            console.log('toca o disco!');
+            player.playVideo();
             audioplayer.play();
-            //audioplayer.volume = 0.1;
             isPlaying = true;
             this.classList.remove('muted');
-            //button.innerHTML = "Pause";
         }
     });
 </script>
