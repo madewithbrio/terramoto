@@ -51,6 +51,37 @@ a {
     width: 100vw;
     height: 100vh;
     background-color: #e91e63;
+    .live-indicator-and-location {
+        position: absolute;
+        z-index: 1;
+        left: var(--sb-100);
+        top: var(--sb-100);
+        display: flex;
+        align-items: center;
+        gap: var(--sb-050);
+        padding-right: var(--sb-050);
+        background-color: var(--colorStaticGrey800);
+        color: var(--colorStaticGrey100);
+        font-weight: 600;
+        //font-size: 0.875rem;
+        //text-transform: uppercase;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .live-indicator {
+        display: flex;
+        align-items: center;
+        gap: var(--sb-025);
+        padding: var(--sb-025) var(--sb-050);
+        background-color: #ef5350;
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        .material-symbols-sharp {
+            font-size: 0.875rem;
+            animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+        }
+    }
     video {
         width: 100vw;
         height: 100vh;
@@ -62,13 +93,14 @@ a {
         left: 50%;
         width: 100vw;
         height: 100vh;
-        transform: translate(-50%, -50%);
+        transform: translate3d(-50%,-50%,0);
         pointer-events: none;
         @media (min-aspect-ratio: 16/9) {
             height: 56.25vw;
         }
         @media (max-aspect-ratio: 16/9) {
             width: 177.78vh;
+            animation: pan 100s infinite linear;
         }
     }
     audio {
@@ -79,15 +111,22 @@ a {
         transform: translate(-50%, -50%);
     }
     .controls {
+        //display: none !important;
         --position: var(--sb-100);
         position: absolute;
         z-index: 1;
         bottom: var(--position);
         left: var(--position);
         //right: var(--position);
-        padding: var(--sb-100);
-        background-color: #000;
-        border-radius:100px;
+        //padding: var(--sb-100);
+        //background-color: #000;
+        //color: var(--colorStaticGrey200);
+        //border-radius:100px;
+        .btn {
+            display: flex;
+            align-items: center;
+            gap: var(--sb-050);
+        }
         .button {
             padding:0;
             background:none;
@@ -149,7 +188,7 @@ a {
 
 
   
-  @keyframes bar1 {
+@keyframes bar1 {
     0% {
       height: 2px;
     }
@@ -159,7 +198,7 @@ a {
     100% {
       height: 2px;
     }
-  }
+}
   
   @keyframes bar2 {
     0% {
@@ -199,3 +238,27 @@ a {
       height: 2px;
     }
   }
+
+@keyframes blinker {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes pan {
+    0% {
+        transform: translate3d(-50%,-50%,0);
+    }
+    25% {
+        transform: translate3d(-85%,-50%,0);
+    }
+    75% {
+        transform: translate3d(-15%,-50%,0);
+    }
+    100% {
+        transform: translate3d(-50%,-50%,0);
+    }
+}

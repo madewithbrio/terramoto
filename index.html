@@ -17,15 +17,23 @@ id: homepage
         data-plyr-embed-id="Q5M-5XFplo0"
         data-plyr-config='{ autoplay: 1 }'></div>
     {% endcomment %}
-    
+    <div class="live-indicator-and-location">
+        <div class="live-indicator">
+            <span class="material-symbols-sharp fill blink">circle</span>
+            <span>Live</span>
+        </div>
+        <div id="location-title"></div>
+    </div>
+
     <div id="ytplayer" _style="display: none;"></div>
 
     <audio id="audioplayer" _controls _preload loop>
         <source src="{{ site.audio_path }}capelinhos-192.mp3" type="audio/mpeg">
         Your browser does not support the audio tag.
     </audio>
-    <div class="controls">
-        <button class="button muted" id="playpause">
+    <div class="[ d-flex gap-3 align-items-center ] controls">
+        {% comment %}
+        <button class="button playpause muted" id="playpause">
             <svg id="equalizer" width="36px" height="36px" viewBox="0 0 8 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g fill="#FFFFFF">
                     <rect id="bar1" class="bar" x="0" y="0" width="1" height="2"></rect>
@@ -35,6 +43,16 @@ id: homepage
                 </g>
             </svg>
         </button>
+        <div id="_location-description"></div>
+        {% endcomment %}
+        <button type="button" class="btn btn-dark" id="playpause">
+            <span class="material-symbols-sharp" id="playicon">play_arrow</span>
+            <span>Play soundtrack</span>
+        </button>
+        <button type="button" class="btn btn-dark">
+            <span class="material-symbols-sharp">info</span>
+            <span>What is this?</span>
+        </button>
     </div>
 </div>
 
@@ -43,24 +61,39 @@ id: homepage
     tag.src = "https://www.youtube.com/player_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    var livestreams = [{
+    var livestreams = [
+        {
             id: "Q5M-5XFplo0",
-            title: "Kilauea",
+            title: "Kilauea volcano",
             description: "Cenassss"
         },
+        /*
         {
-            id: "7wZ2VmV9JDk",
-            title: "Popocatépetl",
+            id: "XRJnW8vW6wc",
+            title: "Semeru volcano",
+            description: "Cenassss"
+        },
+        */
+        {
+            id: "nbcBndYEt10",
+            title: "Popocatépetl volcano",
             description: "Popocatépetl is an active stratovolcano located in the states of Puebla, Morelos, and Mexico in central Mexico."
         },
         {
             id: "dwkHiMfYH5Y",
-            title: "Sakurajima",
+            title: "Sakurajima volcano",
             description: "Sakurajima is an active stratovolcano, formerly an island and now a peninsula, in Kagoshima Prefecture in Kyushu, Japan."
         }
+        
     ];
     
     let randomNumber = Math.floor(Math.random() * livestreams.length);
+    let locationTitle = document.getElementById('location-title');
+    let locationDescription = document.getElementById('location-description');
+
+    locationTitle.innerHTML = livestreams[randomNumber].title;
+    //locationDescription.innerHTML = livestreams[randomNumber].description;
+
     var player;
     function onYouTubePlayerAPIReady() {
         player = new YT.Player('ytplayer', {
@@ -92,6 +125,7 @@ id: homepage
     }
 
     var button = document.getElementById('playpause');
+    let playIcon = document.getElementById('playicon');
     var audioplayer = document.getElementById('audioplayer');
     let isPlaying = false;
     let isMuted = false;
@@ -101,16 +135,19 @@ id: homepage
                 audioplayer.muted = false;
                 isMuted = false;
                 this.classList.remove('muted');
+                playIcon.innerHTML = "pause";
             } else {
                 audioplayer.muted = true;
                 isMuted = true;
                 this.classList.add('muted');
+                playIcon.innerHTML = "play_arrow";
             }
         } else {
             player.playVideo();
             audioplayer.play();
             isPlaying = true;
             this.classList.remove('muted');
+            playIcon.innerHTML = "pause";
         }
     });
 </script>
