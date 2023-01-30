@@ -10,12 +10,10 @@ id: homepage
         <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
         <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
         Your browser does not support HTML5 video.
-        </video>
-        
-        <div id="plyr"
-        data-plyr-provider="youtube"
-        data-plyr-embed-id="Q5M-5XFplo0"
-        data-plyr-config='{ autoplay: 1 }'></div>
+    </video>
+
+    <div id="plyr" data-plyr-provider="youtube" data-plyr-embed-id="Q5M-5XFplo0" data-plyr-config='{ autoplay: 1 }'>
+    </div>
     {% endcomment %}
     <div class="live-indicator-and-location">
         <div class="live-indicator">
@@ -34,7 +32,8 @@ id: homepage
     <div class="[ d-flex gap-3 align-items-center ] controls">
         {% comment %}
         <button class="button playpause muted" id="playpause">
-            <svg id="equalizer" width="36px" height="36px" viewBox="0 0 8 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <svg id="equalizer" width="36px" height="36px" viewBox="0 0 8 10" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g fill="#FFFFFF">
                     <rect id="bar1" class="bar" x="0" y="0" width="1" height="2"></rect>
                     <rect id="bar2" class="bar" x="2" y="0" width="1" height="5"></rect>
@@ -64,10 +63,17 @@ id: homepage
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>The Soundtrack of Cataclysms is a digital project built by the band <a href="">Terramoto</a>. What you'll experience here is livestreams of Nature's catastrophes and peculiarities, accompanied by the music they created to serve as as their soundtrack.</p>
-                <p>The first released song is an attempt to interpret volcano eruptions, with the <em>Capelinhos</em> 1957 disaster in mind, located on the western coast of <em>Faial</em> island in the <em>Azores</em>. There's also a videoclip with real footage from the event.</p>
+                <p>The Soundtrack of Cataclysms is a digital project built by the band <a href="">Terramoto</a>. What
+                    you'll experience here is livestreams of Nature's catastrophes and peculiarities, accompanied by the
+                    music they created to serve as as their soundtrack.</p>
+                <p>The first released song is an attempt to interpret volcano eruptions, with the <em>Capelinhos</em>
+                    1957 disaster in mind, located on the western coast of <em>Faial</em> island in the <em>Azores</em>.
+                    There's also a videoclip with real footage from the event.</p>
                 <div class="ratio-ctn ratio-ctn-169">
-                    <iframe style="border-radius:5px" src="https://www.youtube.com/embed/pXtBWmG-8GA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe style="border-radius:5px" src="https://www.youtube.com/embed/pXtBWmG-8GA"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -113,7 +119,7 @@ id: homepage
             description: ""
         },
     ];
-    
+
     let randomNumber = Math.floor(Math.random() * livestreams.length);
     let locationTitle = document.getElementById('location-title');
     let locationDescription = document.getElementById('location-description');
@@ -127,19 +133,19 @@ id: homepage
             height: '0',
             width: '0',
             videoId: livestreams[randomNumber].id,
-            
+
             events: {
-                onStateChange: function(event) {
-                    if (event.data == YT.PlayerState.PLAYING) {
-                        setTimeout(function() {
-                            let randomNumber = Math.floor(Math.random() * livestreams.length);
-                            player.loadVideoById(livestreams[randomNumber].id);
-                            locationTitle.innerHTML = livestreams[randomNumber].title;
-                        }, 20000);
-                    }
+                onStateChange: function (event) {
+                    //if (event.data == YT.PlayerState.PLAYING) {
+                    setTimeout(function () {
+                        let randomNumber = Math.floor(Math.random() * livestreams.length);
+                        player.loadVideoById(livestreams[randomNumber].id);
+                        locationTitle.innerHTML = livestreams[randomNumber].title;
+                    }, 20000);
+                    //}
                 }
             },
-            
+
             playerVars: {
                 'autoplay': 1,
                 'mute': 1,
@@ -157,7 +163,7 @@ id: homepage
     var audioplayer = document.getElementById('audioplayer');
     let isPlaying = false;
     let isMuted = false;
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
         if (isPlaying) {
             if (isMuted) {
                 audioplayer.muted = false;
