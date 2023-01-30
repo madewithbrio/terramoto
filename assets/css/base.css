@@ -220,6 +220,20 @@ a:hover {
   text-decoration: underline;
 }
 
+.modal-dialog .modal-content {
+  background-color: var(--colorStaticGrey800);
+  color: var(--colorStaticGrey300);
+}
+.modal-dialog .modal-content a {
+  color: var(--colorStaticGrey300);
+}
+.modal-dialog .modal-content .modal-header {
+  border-bottom-color: var(--colorStaticGrey700);
+}
+.modal-dialog .modal-content .modal-header .btn-close {
+  filter: invert(1);
+}
+
 .ctn {
   position: relative;
   overflow: hidden;
@@ -299,6 +313,12 @@ a:hover {
   display: flex;
   align-items: center;
   gap: var(--sb-050);
+  padding: var(--sb-075) var(--sb-100);
+  border: 1px solid rgba(255, 255, 255, 0.33);
+  transition: none;
+}
+.ctn .controls .btn:hover {
+  border-color: rgba(255, 255, 255, 0.66);
 }
 .ctn .controls .button {
   padding: 0;

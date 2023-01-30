@@ -49,10 +49,28 @@ id: homepage
             <span class="material-symbols-sharp" id="playicon">play_arrow</span>
             <span>Play soundtrack</span>
         </button>
-        <button type="button" class="btn btn-dark">
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <span class="material-symbols-sharp">info</span>
             <span>What is this?</span>
         </button>
+    </div>
+</div>
+
+<div class="[ modal _fade ]" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="[ modal-dialog modal-dialog-centered modal-dialog-scrollable ]">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">What is this?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>The Soundtrack of Cataclysms is a digital project built by the band <a href="">Terramoto</a>. What you'll experience here is livestreams of Nature's catastrophes and peculiarities, accompanied by the music they created to serve as as their soundtrack.</p>
+                <p>The first released song is an attempt to interpret volcano eruptions, with the <em>Capelinhos</em> 1957 disaster in mind, located on the western coast of <em>Faial</em> island in the <em>Azores</em>. There's also a videoclip with real footage from the event.</p>
+                <div class="ratio-ctn ratio-ctn-169">
+                    <iframe style="border-radius:5px" src="https://www.youtube.com/embed/pXtBWmG-8GA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
