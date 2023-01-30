@@ -82,7 +82,7 @@ id: homepage
     var livestreams = [
         {
             id: "Q5M-5XFplo0",
-            title: "Kilauea volcano",
+            title: "Kilauea volcano, Hawaii",
             description: "Cenassss"
         },
         /*
@@ -94,15 +94,24 @@ id: homepage
         */
         {
             id: "nbcBndYEt10",
-            title: "Popocatépetl volcano",
+            title: "Popocatépetl volcano, Mexico",
             description: "Popocatépetl is an active stratovolcano located in the states of Puebla, Morelos, and Mexico in central Mexico."
         },
         {
             id: "dwkHiMfYH5Y",
-            title: "Sakurajima volcano",
+            title: "Sakurajima volcano, Japan",
             description: "Sakurajima is an active stratovolcano, formerly an island and now a peninsula, in Kagoshima Prefecture in Kyushu, Japan."
-        }
-        
+        },
+        {
+            id: "7_IlgVUydJI",
+            title: "Fuego volcano, Guatemala",
+            description: ""
+        },
+        {
+            id: "Oy8vieCozpQ",
+            title: "Etna volcano, Italy",
+            description: ""
+        },
     ];
     
     let randomNumber = Math.floor(Math.random() * livestreams.length);
@@ -118,18 +127,19 @@ id: homepage
             height: '0',
             width: '0',
             videoId: livestreams[randomNumber].id,
-            /*
+            
             events: {
                 onStateChange: function(event) {
                     if (event.data == YT.PlayerState.PLAYING) {
                         setTimeout(function() {
                             let randomNumber = Math.floor(Math.random() * livestreams.length);
                             player.loadVideoById(livestreams[randomNumber].id);
-                        }, 30000);
+                            locationTitle.innerHTML = livestreams[randomNumber].title;
+                        }, 20000);
                     }
                 }
             },
-            */
+            
             playerVars: {
                 'autoplay': 1,
                 'mute': 1,
