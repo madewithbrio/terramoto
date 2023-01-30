@@ -135,17 +135,17 @@ id: homepage
             videoId: livestreams[randomNumber].id,
 
             events: {
-                onStateChange: function (event) {
-                    //if (event.data == YT.PlayerState.PLAYING) {
-                    setTimeout(function () {
+                onReady: function (event) {
+                    var currentTime = new Date().getTime();
+                    setInterval(function () {
                         let randomNumber = Math.floor(Math.random() * livestreams.length);
                         player.loadVideoById(livestreams[randomNumber].id);
                         locationTitle.innerHTML = livestreams[randomNumber].title;
+                        console.log("CHANGE:", new Date().getTime() - currentTime);
+                        currentTime = new Date().getTime();
                     }, 20000);
-                    //}
                 }
             },
-
             playerVars: {
                 'autoplay': 1,
                 'mute': 1,
