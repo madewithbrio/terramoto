@@ -239,6 +239,7 @@ a:hover {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background-color: #e91e63;
 }
 .ctn .live-indicator-and-location {
