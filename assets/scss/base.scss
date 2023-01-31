@@ -157,7 +157,7 @@ a {
             align-items: center;
             gap: var(--sb-050);
             padding: var(--sb-075) var(--sb-100);
-            background: var(--colorStaticGrey800);
+            background: var(--colorStaticGrey700);
             //background: rgba(33,33,33,0.66);
             //border: 1px solid rgba(255,255,255,0.33);
             border:none;
@@ -176,7 +176,7 @@ a {
             // }
             &:hover {
                 //background-color: rgba(33,33,33,0.9);
-                background: var(--colorStaticGrey700);
+                background: var(--colorStaticGrey600);
                 //border-color: rgba(255,255,255,0.66);
             }
         }
@@ -213,9 +213,12 @@ a {
         @include breakpoint($small) {
             justify-content: center;
             .logo {
-                //flex:1;
+                text-align: center;
                 width:100%;
                 max-width:100%;
+                img {
+                    max-width:300px;
+                }
             }
         }
     }

@@ -330,12 +330,12 @@ a:hover {
   align-items: center;
   gap: var(--sb-050);
   padding: var(--sb-075) var(--sb-100);
-  background: var(--colorStaticGrey800);
+  background: var(--colorStaticGrey700);
   border: none;
   transition: none;
 }
 .ctn .controls .btn:hover {
-  background: var(--colorStaticGrey700);
+  background: var(--colorStaticGrey600);
 }
 .ctn .controls .button {
   padding: 0;
@@ -369,8 +369,12 @@ a:hover {
     justify-content: center;
   }
   .ctn .controls .logo {
+    text-align: center;
     width: 100%;
     max-width: 100%;
+  }
+  .ctn .controls .logo img {
+    max-width: 300px;
   }
 }
 
