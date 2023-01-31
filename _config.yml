@@ -7,7 +7,7 @@ exclude: [
 destination: ./_site
 
 # SITE TITLE
-title: Terramoto
+title: Cataclysmic Soundscape
 
 # URLS
 host: 0.0.0.0

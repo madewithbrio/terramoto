@@ -127,28 +127,57 @@ a {
         transform: translate(-50%, -50%);
     }
     .controls {
-        //display: none !important;
-        --position: var(--sb-100);
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--sb-100);
         position: absolute;
         z-index: 1;
-        bottom: var(--position);
-        left: var(--position);
+        padding: var(--sb-100);
+        bottom: 0;
+        left: 0;
+        width:100%;
         //right: var(--position);
         //padding: var(--sb-100);
         //background-color: #000;
         //color: var(--colorStaticGrey200);
         //border-radius:100px;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        background: var(--colorStaticGrey800);
+        .logo {
+            display: block;
+            max-width: 200px;
+            img {
+                max-width: 100%;
+            }
+        }
         .btn {
             display: flex;
+            justify-content: center;
             align-items: center;
             gap: var(--sb-050);
             padding: var(--sb-075) var(--sb-100);
+            background: var(--colorStaticGrey800);
             //background: rgba(33,33,33,0.66);
-            border: 1px solid rgba(255,255,255,0.33);
+            //border: 1px solid rgba(255,255,255,0.33);
+            border:none;
             transition: none;
+            // &#playpause {
+            //     width:80px;
+            //     height:80px;
+            //     border-radius: 100%;
+            //     border:2px solid #FFF;
+            //     .material-symbols-sharp {
+            //         font-size: 2.5rem;
+            //     }
+            //     #playtext {
+            //         display: none;
+            //     }
+            // }
             &:hover {
                 //background-color: rgba(33,33,33,0.9);
-                border-color: rgba(255,255,255,0.66);
+                background: var(--colorStaticGrey700);
+                //border-color: rgba(255,255,255,0.66);
             }
         }
         .button {
@@ -179,6 +208,14 @@ a {
                 &:hover {
                     opacity:0.66;
                 }
+            }
+        }
+        @include breakpoint($small) {
+            justify-content: center;
+            .logo {
+                //flex:1;
+                width:100%;
+                max-width:100%;
             }
         }
     }

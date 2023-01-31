@@ -29,7 +29,7 @@ id: homepage
         <source src="{{ site.audio_path }}capelinhos-192.mp3" type="audio/mpeg">
         Your browser does not support the audio tag.
     </audio>
-    <div class="[ d-flex gap-3 align-items-center ] controls">
+    <div class="[  ] controls">
         {% comment %}
         <button class="button playpause muted" id="playpause">
             <svg id="equalizer" width="36px" height="36px" viewBox="0 0 8 10" version="1.1"
@@ -44,9 +44,12 @@ id: homepage
         </button>
         <div id="_location-description"></div>
         {% endcomment %}
+        <a href="/" class="logo">
+            <img src="{{ site.img_path }}logo-04.png" alt="">
+        </a>
         <button type="button" class="btn btn-dark" id="playpause">
-            <span class="material-symbols-sharp" id="playicon">play_arrow</span>
-            <span>Play soundtrack</span>
+            <span class="material-symbols-sharp _fill" id="playicon">play_arrow</span>
+            <span id="playtext">Play</span>
         </button>
         <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <span class="material-symbols-sharp">info</span>
@@ -63,12 +66,9 @@ id: homepage
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>The Soundtrack of Cataclysms is a digital project built by the band <a href="">Terramoto</a>. What
-                    you'll experience here is livestreams of Nature's catastrophes and peculiarities, accompanied by the
-                    music they created to serve as as their soundtrack.</p>
-                <p>The first released song is an attempt to interpret volcano eruptions, with the <em>Capelinhos</em>
-                    1957 disaster in mind, located on the western coast of <em>Faial</em> island in the <em>Azores</em>.
-                    There's also a videoclip with real footage from the event.</p>
+                <p>The Cataclysmic Soundscape is a digital project built by the band <a href="">Terramoto</a>. What you'll experience here is multiple livestreams of Nature's catastrophes and peculiarities, accompanied by music created to serve as soundtrack.</p>
+                <p>The first released song is an interpretation of volcano eruptions, with the azorean <em>Capelinhos</em> 1957 disaster in mind.<p>
+                <p>Here's a videoclip with real footage from the event.</p>
                 <div class="ratio-ctn ratio-ctn-169">
                     <iframe style="border-radius:5px" src="https://www.youtube.com/embed/pXtBWmG-8GA"
                         title="YouTube video player" frameborder="0"
@@ -109,7 +109,8 @@ id: homepage
             description: "Sakurajima is an active stratovolcano, formerly an island and now a peninsula, in Kagoshima Prefecture in Kyushu, Japan."
         },
         {
-            id: "7_IlgVUydJI",
+            //id: "7_IlgVUydJI",
+            id: "o29sejVDkGA",
             title: "Fuego volcano, Guatemala",
             description: ""
         },
@@ -141,7 +142,6 @@ id: homepage
                         let randomNumber = Math.floor(Math.random() * livestreams.length);
                         player.loadVideoById(livestreams[randomNumber].id);
                         locationTitle.innerHTML = livestreams[randomNumber].title;
-                        console.log("CHANGE:", new Date().getTime() - currentTime);
                         currentTime = new Date().getTime();
                     }, 20000);
                 }
@@ -160,28 +160,46 @@ id: homepage
 
     var button = document.getElementById('playpause');
     let playIcon = document.getElementById('playicon');
+    let playText = document.getElementById('playtext');
     var audioplayer = document.getElementById('audioplayer');
     let isPlaying = false;
     let isMuted = false;
     button.addEventListener("click", function () {
+        /*
         if (isPlaying) {
             if (isMuted) {
                 audioplayer.muted = false;
                 isMuted = false;
-                this.classList.remove('muted');
+                //this.classList.remove('muted');
                 playIcon.innerHTML = "pause";
+                playText.innerHTML = "Pause";
             } else {
                 audioplayer.muted = true;
                 isMuted = true;
-                this.classList.add('muted');
+                //this.classList.add('muted');
                 playIcon.innerHTML = "play_arrow";
+                playText.innerHTML = "Play";
             }
         } else {
             player.playVideo();
             audioplayer.play();
             isPlaying = true;
-            this.classList.remove('muted');
+            //this.classList.remove('muted');
             playIcon.innerHTML = "pause";
+            playText.innerHTML = "Pause";
+        }
+        */
+        if (isPlaying) {
+            audioplayer.pause();
+            playIcon.innerHTML = "play_arrow";
+            playText.innerHTML = "Play";
+            isPlaying = false;
+        } else {
+            player.playVideo();
+            audioplayer.play();
+            playIcon.innerHTML = "pause";
+            playText.innerHTML = "Pause";
+            isPlaying = true;
         }
     });
 </script>

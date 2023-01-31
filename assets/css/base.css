@@ -304,22 +304,38 @@ a:hover {
   transform: translate(-50%, -50%);
 }
 .ctn .controls {
-  --position: var(--sb-100);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sb-100);
   position: absolute;
   z-index: 1;
-  bottom: var(--position);
-  left: var(--position);
+  padding: var(--sb-100);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+  background: var(--colorStaticGrey800);
+}
+.ctn .controls .logo {
+  display: block;
+  max-width: 200px;
+}
+.ctn .controls .logo img {
+  max-width: 100%;
 }
 .ctn .controls .btn {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: var(--sb-050);
   padding: var(--sb-075) var(--sb-100);
-  border: 1px solid rgba(255, 255, 255, 0.33);
+  background: var(--colorStaticGrey800);
+  border: none;
   transition: none;
 }
 .ctn .controls .btn:hover {
-  border-color: rgba(255, 255, 255, 0.66);
+  background: var(--colorStaticGrey700);
 }
 .ctn .controls .button {
   padding: 0;
@@ -347,6 +363,15 @@ a:hover {
 }
 .ctn .controls .button.muted:hover {
   opacity: 0.66;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .ctn .controls {
+    justify-content: center;
+  }
+  .ctn .controls .logo {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @keyframes bar1 {
