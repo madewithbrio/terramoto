@@ -74,10 +74,6 @@ id: teste
             <iframe class="video" src="https://www.youtube.com/embed/Oy8vieCozpQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <div class="label">Oy8vieCozpQ</div>
         </div>
-        <div class="ratio-ctn ratio-ctn-169">
-            <iframe class="video" src="https://www.youtube.com/embed/pO2zFFeqiMo" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <div class="label">pO2zFFeqiMo</div>
-        </div>
     </div>
 
     <h2>Chaparrastique volcano</h2>
@@ -104,11 +100,27 @@ id: teste
         </div>
     </div>
 
+    <h2>Lisbon falls</h2>
+    <div class="videos">
+        <div class="ratio-ctn ratio-ctn-169">
+            <iframe class="video" src="https://www.youtube.com/embed/9viZIxuonrI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="label">9viZIxuonrI</div>
+        </div>
+    </div>
+
     <h2>C/2022 E3 comet</h2>
     <div class="videos">
         <div class="ratio-ctn ratio-ctn-169">
             <iframe class="video" src="https://www.youtube.com/embed/5qPoRCo_AZQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <div class="label">5qPoRCo_AZQ</div>
+        </div>
+    </div>
+
+    <h2>Aurora borealis</h2>
+    <div class="videos">
+        <div class="ratio-ctn ratio-ctn-169">
+            <iframe class="video" src="https://www.youtube.com/embed/a0i1Kg6fROg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="label">a0i1Kg6fROg</div>
         </div>
     </div>
 </div>
@@ -119,7 +131,7 @@ id: teste
     
     playButton.addEventListener("click", function() {
         for (let i = 0; i < videos.length; i++) {
-            videos[i].src += "?autoplay=1";
+            videos[i].src += "?autoplay=1&mute=1";
         }
     });
 </script>
