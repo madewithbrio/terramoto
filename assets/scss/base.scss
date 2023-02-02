@@ -29,7 +29,14 @@ a {
     }
 }
 
-
+.grid {
+    width:100%;
+    max-width:var(--gridMaxWidth);
+    padding-left: var(--spacingDefault);
+    padding-right: var(--spacingDefault);
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 .modal-dialog {
@@ -49,7 +56,35 @@ a {
     }
 }
 
-
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sb-050);
+    padding: var(--sb-075) var(--sb-100);
+    background: var(--colorStaticGrey700);
+    //background: rgba(33,33,33,0.66);
+    //border: 1px solid rgba(255,255,255,0.33);
+    border:none;
+    transition: none;
+    // &#playpause {
+    //     width:80px;
+    //     height:80px;
+    //     border-radius: 100%;
+    //     border:2px solid #FFF;
+    //     .material-symbols-sharp {
+    //         font-size: 2.5rem;
+    //     }
+    //     #playtext {
+    //         display: none;
+    //     }
+    // }
+    &:hover {
+        //background-color: rgba(33,33,33,0.9);
+        background: var(--colorStaticGrey600);
+        //border-color: rgba(255,255,255,0.66);
+    }
+}
 
 
 
@@ -116,7 +151,13 @@ a {
         }
         @media (max-aspect-ratio: 16/9) {
             width: 177.78vh;
-            animation: pan 100s infinite linear;
+            //transform: translate3d( calc( 177.78vh - 250vw ) , -50% , 0 );
+            //transform: translate3d( calc( ( 50% * -1 ) - ( 177.78vh - 15vw) ) , -50% , 0 );
+            //transform: translate3d( calc( ( 50% * -1 ) - ( 100vw - 177.78vh) ) , -50% , 0 );
+            //transform: translate3d( calc( ( 50% * -1 ) - 77.78vh ) , -50% , 0 );
+            //transform: translate3d(calc( ( 50% * -1 ) - 15vw ), -50%, 0);
+            //transform: translate3d( -85% , -50%, 0);
+            //animation: pan 10s infinite linear;
         }
     }
     audio {
@@ -151,35 +192,7 @@ a {
                 max-width: 100%;
             }
         }
-        .btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: var(--sb-050);
-            padding: var(--sb-075) var(--sb-100);
-            background: var(--colorStaticGrey700);
-            //background: rgba(33,33,33,0.66);
-            //border: 1px solid rgba(255,255,255,0.33);
-            border:none;
-            transition: none;
-            // &#playpause {
-            //     width:80px;
-            //     height:80px;
-            //     border-radius: 100%;
-            //     border:2px solid #FFF;
-            //     .material-symbols-sharp {
-            //         font-size: 2.5rem;
-            //     }
-            //     #playtext {
-            //         display: none;
-            //     }
-            // }
-            &:hover {
-                //background-color: rgba(33,33,33,0.9);
-                background: var(--colorStaticGrey600);
-                //border-color: rgba(255,255,255,0.66);
-            }
-        }
+
         .button {
             padding:0;
             background:none;
@@ -225,7 +238,36 @@ a {
 }
 
 
-
+.videos {
+    display: grid;
+    gap: var(--sb-200);
+    grid-template-columns: repeat(auto-fill,minmax(400px, 1fr));
+    margin-bottom: 5vh;
+    // iframe {
+    //     position: relative;
+    //     &:after {
+    //         position:absolute;
+    //         top:100%;
+    //         left:0;
+    //         content: attr(src);
+    //     }
+    // }
+    > * {
+        > .label {
+            position:absolute;
+            z-index: 2;
+            top: auto;
+            bottom: var(--sb-100);
+            left: var(--sb-100);
+            width: auto;
+            height: auto;
+            padding:var(--sb-025) var(--sb-050);
+            background-color: var(--colorStaticGrey800);
+            color: var(--colorStaticGrey100);
+            border-radius: 2px;
+        }
+    }
+}
 
 
 
@@ -318,9 +360,11 @@ a {
     }
     25% {
         transform: translate3d(-85%,-50%,0);
+        //transform: translate3d(-115vh,-50%,0);
     }
     75% {
         transform: translate3d(-15%,-50%,0);
+        //transform: translate3d(-15vh,-50%,0);
     }
     100% {
         transform: translate3d(-50%,-50%,0);
